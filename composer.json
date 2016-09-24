@@ -1,0 +1,15 @@
+{
+    "name": "magento-hackathon/translation-collector",
+    "description": "A collector for Magento2 translations which outputs missing translations",
+    "type": "package",
+    "authors": [
+        {
+            "name": "Dwayne Hanekamp",
+            "email": "dwaynehanekamp@gmail.com"
+        },
+	{
+	    "name": "Lewis Voncken"
+	}
+    ],
+    "require": {}
+}
