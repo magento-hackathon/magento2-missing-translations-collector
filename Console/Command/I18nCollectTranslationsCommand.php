@@ -65,7 +65,6 @@ class I18nCollectTranslationsCommand extends Command
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $output->writeln('<info>Collected Translatable Strings</info>');
 
         $directory = $input->getArgument(self::INPUT_KEY_DIRECTORY);
         if ($input->getOption(self::INPUT_KEY_MAGENTO)) {
@@ -79,6 +78,8 @@ class I18nCollectTranslationsCommand extends Command
         $generator = ServiceLocator::getDictionaryGenerator();
         $objectManager = ObjectManager::getInstance();
         $emulation = $objectManager->create('\Magento\Store\Model\App\Emulation');
+        $appState = $objectManager->get('Magento\Framework\App\State');
+        $appState->setAreaCode('frontend');
         $emulation->startEnvironmentEmulation($input->getOption(self::INPUT_KEY_STORE));
         $generator->generate(
             $directory,
@@ -87,6 +88,6 @@ class I18nCollectTranslationsCommand extends Command
 
         );
         $emulation->stopEnvironmentEmulation();
-        $output->writeln('<info>Collected Translatable Strings</info>');
+        $output->writeln('<info>Collected Missing Translations for specified store</info>');
     }
 }
