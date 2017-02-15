@@ -71,7 +71,7 @@ class Contextual extends AbstractParser
             $phrase->addContextValue($contextValue);
         } else {
             $foundTranslation = $this->_translatePhrase($phraseData['phrase']);
-            if ($foundTranslation) {
+            if ($foundTranslation == false) {
                 $this->_phrases[$phraseKey] = $this->_factory->createPhrase(
                     [
                         'phrase' => $phraseData['phrase'],
