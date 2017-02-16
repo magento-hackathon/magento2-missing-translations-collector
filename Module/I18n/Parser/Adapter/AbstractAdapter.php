@@ -34,7 +34,19 @@ abstract class AbstractAdapter implements AdapterInterface
     {
         $this->_phrases = [];
         $this->_file = $file;
-        $this->_parse();
+        if (
+            !strpos(strtolower($this->_file), 'adminhtml') && // exclude all adminhtml files
+            !strpos(strtolower($this->_file), '/module-backend/') &&
+            !strpos(strtolower($this->_file), '/module-admin-gws/') &&
+            !strpos(strtolower($this->_file), '/module-admin-notification/') &&
+            !strpos(strtolower($this->_file), '/module-translation/') &&
+            !strpos(strtolower($this->_file), '/module-support/') &&
+            !strpos(strtolower($this->_file), '/module-versions-cms/') &&
+            !strpos(strtolower($this->_file), '/module-visual-merchandiser/') &&
+            !strpos(strtolower($this->_file), '/module-webapi/')
+        ) {
+            $this->_parse();
+        }
     }
 
     /**
