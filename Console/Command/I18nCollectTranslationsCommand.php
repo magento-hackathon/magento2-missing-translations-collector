@@ -34,9 +34,9 @@ class I18nCollectTranslationsCommand extends Command
     {
         $generator = ServiceLocator::getDictionaryGenerator();
         $generator->generate(
-            BP, // Full installation
-            'var/tmp/collected_translations.csv',
-            true
+            'vendor/magento/module-customer', // Full installation
+            false,
+            false
         );
         $output->writeln('<info>Collected Translatable Strings</info>');
     }
