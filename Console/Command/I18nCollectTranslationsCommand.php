@@ -29,7 +29,7 @@ class I18nCollectTranslationsCommand extends Command
 
     protected function configure()
     {
-        $this->setName('i18n:collect-translations')
+        $this->setName('i18n:collect-missing-translations')
             ->setDescription('Collect all Translatable strings');
         $this->setDefinition([
             new InputArgument(
