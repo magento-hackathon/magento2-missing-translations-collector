@@ -36,14 +36,28 @@ abstract class AbstractAdapter implements AdapterInterface
         $this->_file = $file;
         if (
             !strpos(strtolower($this->_file), 'adminhtml') && // exclude all adminhtml files
-            !strpos(strtolower($this->_file), '/module-backend/') &&
-            !strpos(strtolower($this->_file), '/module-admin-gws/') &&
-            !strpos(strtolower($this->_file), '/module-admin-notification/') &&
-            !strpos(strtolower($this->_file), '/module-translation/') &&
-            !strpos(strtolower($this->_file), '/module-support/') &&
-            !strpos(strtolower($this->_file), '/module-versions-cms/') &&
-            !strpos(strtolower($this->_file), '/module-visual-merchandiser/') &&
-            !strpos(strtolower($this->_file), '/module-webapi/')
+            !strpos(strtolower($this->_file), 'import-export/') &&
+            !strpos(strtolower($this->_file), '/magento/module-backend/') &&
+            !strpos(strtolower($this->_file), '/magento/module-admin-gws/') &&
+            !strpos(strtolower($this->_file), '/magento/module-admin-notification/') &&
+            !strpos(strtolower($this->_file), '/magento/module-translation/') &&
+            !strpos(strtolower($this->_file), '/magento/module-support/') &&
+            !strpos(strtolower($this->_file), '/magento/module-versions-cms/') &&
+            !strpos(strtolower($this->_file), '/magento/module-visual-merchandiser/') &&
+            !strpos(strtolower($this->_file), '/magento/module-webapi/') &&
+            !strpos(strtolower($this->_file), '/magento/module-webapi-') &&
+            !strpos(strtolower($this->_file), '/magento/module-developer/') &&
+            !strpos(strtolower($this->_file), '/magento/module-cron/') &&
+            !strpos(strtolower($this->_file), '/magento/module-catalog-url-rewrite/') &&
+            !strpos(strtolower($this->_file), '/magento/module-catalog-url-rewrite-staging/') &&
+            !strpos(strtolower($this->_file), '/magento/module-cache-invalidate/') &&
+            !strpos(strtolower($this->_file), '/magento/module-encryption-key/') &&
+            !strpos(strtolower($this->_file), '/magento/module-indexer/') &&
+            !strpos(strtolower($this->_file), '/magento/module-message-queue/') &&
+            !strpos(strtolower($this->_file), '/magento/module-new-relic-reporting/') &&
+            !strpos(strtolower($this->_file), '/magento/module-resource-connections/') &&
+            !strpos(strtolower($this->_file), '/magento/module-security/') &&
+            !strpos(strtolower($this->_file), '/magento/module-logging/')
         ) {
             $this->_parse();
         }
